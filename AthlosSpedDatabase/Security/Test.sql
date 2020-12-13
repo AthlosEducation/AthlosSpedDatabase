@@ -1,0 +1,5 @@
+CREATE USER [Test] WITHOUT LOGIN;
+
+
+GO
+

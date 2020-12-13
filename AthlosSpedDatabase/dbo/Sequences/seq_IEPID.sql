@@ -1,0 +1,8 @@
+CREATE SEQUENCE [dbo].[seq_IEPID]
+    AS INT
+    START WITH 8090
+    INCREMENT BY 1;
+
+
+GO
+

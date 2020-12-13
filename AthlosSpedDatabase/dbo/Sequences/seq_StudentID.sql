@@ -1,0 +1,8 @@
+CREATE SEQUENCE [dbo].[seq_StudentID]
+    AS INT
+    START WITH 2805
+    INCREMENT BY 1;
+
+
+GO
+
