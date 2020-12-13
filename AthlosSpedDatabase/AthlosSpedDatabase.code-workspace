@@ -7,7 +7,6 @@
 	"settings": {
 		"dataworkspace.projects": [
 			"AthlosSpedDatabase.sqlproj"
-		],
-		"git.ignoreLimitWarning": true
+		]
 	}
 }
