@@ -9,7 +9,7 @@ SELECT
 FROM dbo.Users AS U
 INNER JOIN dbo.District AS D ON D.DistrictID = U.DistrictID
 INNER JOIN dbo.Customers AS C ON C.CustomerID = D.CustomerID
-WHERE (UserIsCurrent = 1 AND U.DistrictID <>7) OR (AspNetUserID IS NULL AND (U.DistrictID <> 7 AND U.DistrictID <> 1 AND U.DistrictID <> 23))
+WHERE C.CustomerIsCurrent = 1 AND U.DistrictID <> 1 AND U.DistrictID <> 7 AND (U.UserIsCurrent = 1 OR AspNetUserID IS NULL)
 ORDER BY
 	C.CustomerLicenseType
 	,D.DistrictName
