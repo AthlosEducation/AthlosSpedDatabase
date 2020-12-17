@@ -13,8 +13,9 @@ SELECT * FROM GoalServiceAreaMapping;
 -- Insert list of new goal names into the Goal Service Area Mapping Table
 INSERT INTO dbo.GoalServiceAreaMapping (District, GoalCategory, GoalServiceAreaID)
 VALUES 
-	('Atwater Elementary School District','Decoding    Decodificacion',2)
-	,('Pullman School District','Nursing',2);
+	('Athlos Academies','Self Control',11)
+	,('Atwater Elementary School District','Numbers & Operations In Base Ten  Números Y Operaciones En Base Diez',2)
+	,('Atwater Elementary School District','Reading - Decoding/Fluency',3);
 GO
 
 -- Remove from no match list
