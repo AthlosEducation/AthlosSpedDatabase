@@ -1,0 +1,18 @@
+SELECT * FROM Users WHERE DistrictID = 13;
+GO
+
+SELECT * FROM dbo.Log WHERE UserID = 298 AND Hours > 1 ORDER BY LogID;
+GO
+
+UPDATE dbo.[Log]
+SET StartTime = '13:40:00'
+WHERE LogID = 70430;
+GO
+
+UPDATE dbo.[Log]
+SET Hours = CAST(((CAST(DATEDIFF(MINUTE,StartTime,EndTime)AS DECIMAL(18,2)))/60) AS DECIMAL(18,2))
+WHERE LogID = 70430;
+GO
+
+SELECT * FROM dbo.Log WHERE LogID = 70430;
+GO
