@@ -18,7 +18,6 @@ CREATE TABLE dbo.Reports (
 );
 GO
 
-DROP TABLE reportsStag;
 SELECT * FROM Reports;
 GO
 
@@ -38,3 +37,9 @@ SELECT
     ,CAST(LastRunBy AS INT)
 FROM reportsStag;
 GO
+
+ALTER TABLE Reports
+ADD CONSTRAINT pkReportID PRIMARY KEY (ReportID);
+GO
+
+DROP TABLE reportsStag;

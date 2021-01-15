@@ -43,6 +43,9 @@ WHERE StudentID = 1468 AND IEPIsCurrent = 1
 ORDER BY IEPName;
 GO
 
+SELECT * FROM Student WHERE StudentID = 1468;
+GO
+
 EXEC CheckDuplicateGoals;
 GO
 
