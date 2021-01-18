@@ -5,12 +5,12 @@ GO
 
 INSERT INTO dbo.Customers (CustomerContactFirstName, CustomerContactLastName, CustomerContactEmail, CustomerLicenseType, CustomerLicenseName, CustomerLicenses, CustomerStartDate, CustomerEndDate, CustomerIsCurrent, CustomerPrimaryDeviceType, CustomerSecondaryDeviceType)
 VALUES (
-	'Juliet' -- FirstName of primary contact
-	,'Gibson' -- LastName or primary contact
-	,'juli.gibson@bvcps.net' -- Email or primary contact
+	'Corinne' -- FirstName of primary contact
+	,'Altrichter' -- LastName or primary contact
+	,'caltrichter@mnic.org' -- Email or primary contact
 	,'District' -- District
-	,'Buena Vista City Public Schools' -- District Name
-	,15 -- Number of users
+	,'Minnesota Internship Center' -- District Name
+	,6 -- Number of users
 	,CAST(CONVERT(NVARCHAR(50), GETDATE(), 112) AS DATE) -- Current date (dont change)
 	,NULL -- always null for enterprises
 	,1 -- always 1
@@ -31,10 +31,10 @@ GO
 
 INSERT INTO dbo.School (SchoolName, SISEnabled, IEPEnabled, DistrictID, CustomerID, StudentSnapshotID)
 VALUES 
-	('Parry McCluer High School',0,0,23,49,0) -- Update school name, districtID, and customerID
-	,('Parry McCluer Middle School',0,0,23,49,0) -- Update school name, districtID, and customerID
-	,('Enderly Heights Elementary School',0,0,23,49,0) -- Update school name, districtID, and customerID
-	,('F.W. Kling Elementary School',0,0,23,49,0); -- Update school name, districtID, and customerID
+	('Downtown',1,1,66,91,0) -- Update school name, districtID, and customerID
+	,('Rondo',1,1,66,91,0) -- Update school name, districtID, and customerID
+	,('SOAR',1,1,66,91,0) -- Update school name, districtID, and customerID
+	,('Unity',1,1,66,91,0); -- Update school name, districtID, and customerID
 GO
 
 SELECT * FROM School;
