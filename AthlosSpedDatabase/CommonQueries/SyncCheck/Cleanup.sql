@@ -39,11 +39,11 @@ WHERE row_num > 1 AND IEPIsCurrent = 1;
 GO
 
 SELECT * FROM dbo.IEP 
-WHERE StudentID = 1468 AND IEPIsCurrent = 1
+WHERE StudentID = 5806 AND IEPIsCurrent = 1
 ORDER BY IEPName;
 GO
 
-SELECT * FROM Student WHERE StudentID = 1468;
+SELECT * FROM Student WHERE StudentID = 5806;
 GO
 
 EXEC CheckDuplicateGoals;
@@ -76,3 +76,7 @@ FULL OUTER JOIN dbo.Log AS LOG ON Log.StudentKey = S.StudentKey
 FULL OUTER JOIN dbo.ProgressMonitoring AS P ON P.StudentKey = S.StudentKey
 WHERE S.StudentIsCurrent = 0 AND LOG.LogID IS NULL AND P.ProgressMonitoringID IS NULL);
 GO
+
+
+--- OTHER CLEAN UP -------
+
