@@ -80,3 +80,52 @@ GO
 
 --- OTHER CLEAN UP -------
 
+SELECT * FROM  Student WHERE DistrictID = 11 AND StudentIsCurrent = 1;
+GO
+SELECT * FROM Student WHERE StudentID = 3794;
+SELECT * FROM IEP WHERE StudentID = 3794 AND IEPIsCurrent = 1;
+GO
+
+
+
+
+WITH CTE AS (
+    SELECT 
+		IEPKey
+		,IEPID
+		,StudentID
+		,IEPName
+		,IEPGoal
+		,IEPStartDate
+		,IEPEndDate
+		,IEPTrackingDate
+		,IEPIsCurrent
+		,GoalServiceAreaID
+        ,ROW_NUMBER() OVER (
+            PARTITION BY 
+				StudentID
+				,IEPName
+				,IEPGoal
+				,IEPStartDate
+				,IEPEndDate
+				,IEPTrackingDate
+				,IEPIsCurrent
+				,GoalServiceAreaID
+            ORDER BY
+				IEPKey ASC 
+				,StudentID
+				,IEPName
+				,IEPGoal
+				,IEPStartDate
+				,IEPEndDate
+				,IEPTrackingDate
+				,IEPIsCurrent
+				,GoalServiceAreaID
+        ) row_num
+     FROM 
+        dbo.IEP
+)
+UPDATE dbo.IEP 
+SET IEPIsCurrent = 0 
+WHERE IEPKey IN (SELECT IEPKey FROM CTE WHERE row_num > 1 AND IEPIsCurrent = 1 AND IEPName = 'Parent Contact');
+GO

@@ -10,18 +10,16 @@ CREATE TABLE dbo.Reports (
     ,HasSchoolFilter BIT NOT NULL
     ,HasUserFilter BIT NOT NULL
     ,HasStudentFilter BIT NOT NULL
+    ,HasGoalFilter BIT NOT NULL
     ,HasDatesFilter BIT NOT NULL
     ,DistrictID INT NOT NULL
-    ,RunCount INT NOT NULL
-    ,LastRun DATE NOT NULL
-    ,LastRunBy INT NOT NULL
 );
 GO
 
 SELECT * FROM Reports;
 GO
 
-INSERT INTO dbo.Reports (ReportName, ReportDescription, ReportType, IsDefault, HasSchoolFilter, HasUserFilter, HasStudentFilter, HasDatesFilter, DistrictID, RunCount, LastRun, LastRunBy)
+INSERT INTO dbo.Reports (ReportName, ReportDescription, ReportType, IsDefault, HasSchoolFilter, HasUserFilter, HasStudentFilter, HasGoalFilter, HasDatesFilter, DistrictID)
 SELECT 
     CAST(ReportName AS NVARCHAR(100))
     ,CAST(ReportDescription AS NVARCHAR(500))
@@ -31,10 +29,8 @@ SELECT
     ,CAST(HasUserFilter AS BIT)
     ,CAST(HasStudentFilter AS BIT)
     ,CAST(HasDatesFilter AS BIT)
+    ,CAST(HasGoalFilter AS BIT)
     ,CAST(DistrictID AS INT)
-    ,CAST(RunCount AS INT)
-    ,CAST(LastRun AS DATE)
-    ,CAST(LastRunBy AS INT)
 FROM reportsStag;
 GO
 

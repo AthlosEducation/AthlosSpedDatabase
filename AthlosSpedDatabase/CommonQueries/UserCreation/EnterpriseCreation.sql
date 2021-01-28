@@ -5,12 +5,12 @@ GO
 
 INSERT INTO dbo.Customers (CustomerContactFirstName, CustomerContactLastName, CustomerContactEmail, CustomerLicenseType, CustomerLicenseName, CustomerLicenses, CustomerStartDate, CustomerEndDate, CustomerIsCurrent, CustomerPrimaryDeviceType, CustomerSecondaryDeviceType)
 VALUES (
-	'Corinne' -- FirstName of primary contact
-	,'Altrichter' -- LastName or primary contact
-	,'caltrichter@mnic.org' -- Email or primary contact
+	'Christine' -- FirstName of primary contact
+	,'Baxter' -- LastName or primary contact
+	,'christine.baxter@sessnv.com' -- Email or primary contact
 	,'District' -- District
-	,'Minnesota Internship Center' -- District Name
-	,6 -- Number of users
+	,'Mater Academy - Nevada' -- District Name
+	,40 -- Number of users
 	,CAST(CONVERT(NVARCHAR(50), GETDATE(), 112) AS DATE) -- Current date (dont change)
 	,NULL -- always null for enterprises
 	,1 -- always 1
@@ -31,10 +31,9 @@ GO
 
 INSERT INTO dbo.School (SchoolName, SISEnabled, IEPEnabled, DistrictID, CustomerID, StudentSnapshotID)
 VALUES 
-	('Downtown',1,1,66,91,0) -- Update school name, districtID, and customerID
-	,('Rondo',1,1,66,91,0) -- Update school name, districtID, and customerID
-	,('SOAR',1,1,66,91,0) -- Update school name, districtID, and customerID
-	,('Unity',1,1,66,91,0); -- Update school name, districtID, and customerID
+	('Mater Bonanza',1,1,72,97,0) -- Update school name, districtID, and customerID
+	,('Mater East',1,1,72,97,0) -- Update school name, districtID, and customerID
+	,('Mater Mountain Vista',1,1,72,97,0); -- Update school name, districtID, and customerID
 GO
 
 SELECT * FROM School;
