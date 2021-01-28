@@ -9,7 +9,6 @@ WITH DuplicateStudentRows AS (
         ,StudentLastName
         ,StudentNumber
         ,S.DistrictID
-        ,S.SchoolID
         ,ROW_NUMBER() OVER (
             PARTITION BY 
 				StudentID
@@ -17,25 +16,21 @@ WITH DuplicateStudentRows AS (
                 ,StudentLastName
                 ,StudentNumber
                 ,S.DistrictID
-                ,S.SchoolID
             ORDER BY 
 				StudentID
 		        ,StudentFirstName
                 ,StudentLastName
                 ,StudentNumber
                 ,S.DistrictID
-                ,S.SchoolID
         ) row_num
      FROM 
         dbo.Student AS S 
-    --INNER JOIN dbo. Log AS L ON L.StudentKey = S.StudentKey
     GROUP BY
         StudentID
 		,StudentFirstName
         ,StudentLastName
         ,StudentNumber
         ,S.DistrictID
-        ,S.SchoolID
 ), StudentsWithMultipleIDs AS(
                                 SELECT TOP 100000000
                                     [StudentID] = MAX(StudentID)
@@ -43,7 +38,6 @@ WITH DuplicateStudentRows AS (
                                     ,StudentLastName
                                     ,StudentNumber
                                     ,DistrictID
-                                    ,SchoolID
                                     ,[Count] = COUNT(*)
                                 FROM DuplicateStudentRows
                                 GROUP BY
@@ -51,7 +45,6 @@ WITH DuplicateStudentRows AS (
                                     ,StudentLastName
                                     ,StudentNumber
                                     ,DistrictID
-                                    ,SchoolID
                                 HAVING COUNT(*) > 1
                                 ORDER BY
                                     DistrictID)
@@ -69,7 +62,6 @@ WITH DuplicateStudentRows AS (
         ,StudentLastName
         ,StudentNumber
         ,S.DistrictID
-        ,S.SchoolID
         ,ROW_NUMBER() OVER (
             PARTITION BY 
 				StudentID
@@ -77,25 +69,21 @@ WITH DuplicateStudentRows AS (
                 ,StudentLastName
                 ,StudentNumber
                 ,S.DistrictID
-                ,S.SchoolID
             ORDER BY 
 				StudentID
 		        ,StudentFirstName
                 ,StudentLastName
                 ,StudentNumber
                 ,S.DistrictID
-                ,S.SchoolID
         ) row_num
      FROM 
         dbo.Student AS S 
-    --INNER JOIN dbo. Log AS L ON L.StudentKey = S.StudentKey
     GROUP BY
         StudentID
 		,StudentFirstName
         ,StudentLastName
         ,StudentNumber
         ,S.DistrictID
-        ,S.SchoolID
 ), StudentsWithMultipleIDs AS(
                                 SELECT TOP 100000000
                                     [StudentID] = MAX(StudentID)
@@ -103,7 +91,6 @@ WITH DuplicateStudentRows AS (
                                     ,StudentLastName
                                     ,StudentNumber
                                     ,DistrictID
-                                    ,SchoolID
                                     ,[Count] = COUNT(*)
                                 FROM DuplicateStudentRows
                                 GROUP BY
@@ -111,7 +98,6 @@ WITH DuplicateStudentRows AS (
                                     ,StudentLastName
                                     ,StudentNumber
                                     ,DistrictID
-                                    ,SchoolID
                                 HAVING COUNT(*) > 1
                                 ORDER BY
                                     DistrictID)
