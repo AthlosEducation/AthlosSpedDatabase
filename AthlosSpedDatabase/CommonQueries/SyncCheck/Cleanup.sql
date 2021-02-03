@@ -80,14 +80,9 @@ GO
 
 --- OTHER CLEAN UP -------
 
-SELECT * FROM  Student WHERE DistrictID = 11 AND StudentIsCurrent = 1;
+SELECT * FROM Student WHERE StudentID = 6902;
+SELECT * FROM IEP WHERE StudentID = 6902 AND IEPIsCurrent = 1;
 GO
-SELECT * FROM Student WHERE StudentID = 3794;
-SELECT * FROM IEP WHERE StudentID = 3794 AND IEPIsCurrent = 1;
-GO
-
-
-
 
 WITH CTE AS (
     SELECT 
