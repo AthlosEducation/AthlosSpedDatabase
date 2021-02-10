@@ -1,4 +1,4 @@
-SELECT * FROM reportsStag;
+SELECT * FROM ReportsTable;
 GO
 
 CREATE TABLE dbo.Reports (
@@ -31,11 +31,11 @@ SELECT
     ,CAST(HasDatesFilter AS BIT)
     ,CAST(HasGoalFilter AS BIT)
     ,CAST(DistrictID AS INT)
-FROM reportsStag;
+FROM ReportsTable;
 GO
 
 ALTER TABLE Reports
 ADD CONSTRAINT pkReportID PRIMARY KEY (ReportID);
 GO
 
-DROP TABLE reportsStag;
+DROP TABLE ReportsTable;
