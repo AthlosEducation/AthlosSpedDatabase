@@ -39,3 +39,13 @@ ADD CONSTRAINT pkReportID PRIMARY KEY (ReportID);
 GO
 
 DROP TABLE ReportsTable;
+
+UPDATE dbo.Reports 
+SET HasGoalFilter = 0 
+WHERE ReportID = 4;
+GO
+
+UPDATE dbo.Reports 
+SET HasDatesFilter = 1 
+WHERE ReportID = 4;
+GO
