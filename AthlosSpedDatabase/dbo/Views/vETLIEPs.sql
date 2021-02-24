@@ -1,13 +1,10 @@
-
-
-
-
-CREATE VIEW [dbo].[vETLIEPs]
+ALTER VIEW [dbo].[vETLIEPs]
 /* Author: Christian Macdonald
 ** Desc: Extracts and transforms IEP goal data from staging DB
 ** Change Log: When,Who,What
 ** 2020-09-01,Christian Macdonald,Created View
 ** 2020-12-02,Christian Macdonald, Added group by clause
+** 2021-02-23,Christian Macdonald, added iif statement for goal service minutes
 */
 AS
 	SELECT
@@ -38,4 +35,3 @@ AS
 		,I.GoalServiceAreaID;
 
 GO
-
